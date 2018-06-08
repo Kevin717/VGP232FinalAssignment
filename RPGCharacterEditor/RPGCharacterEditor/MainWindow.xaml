@@ -1,12 +1,76 @@
-﻿<Window x:Class="RPGCharacterEditor.MainWindow"
+﻿<Window x:Class="WpfApp1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RPGCharacterEditor"
+        xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="RPG Character Editor" Height="621.483" Width="800.547">
+    <Grid Margin="0,0,2,0">
+        <DataGrid HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="199" Margin="430,13,0,0"/>
+        <Button Content="Add hat" HorizontalAlignment="Left" Margin="323,41,0,0" VerticalAlignment="Top" Width="72" Height="21"/>
+        <Button Content="Add shirt" HorizontalAlignment="Left" Margin="323,96,0,0" VerticalAlignment="Top" Width="72" Height="21" Click="Button_Click"/>
+        <Button Content="Add boots" HorizontalAlignment="Left" Margin="323,159,0,0" VerticalAlignment="Top" Width="72" Height="19"/>
+        <Image x:Name="Image" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="131" Margin="26,20,0,0"/>
+        <Button Content="Add Item" HorizontalAlignment="Left" Margin="475,216,0,0" VerticalAlignment="Top" Width="97" Height="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="222,41,0,0" TextWrapping="Wrap" Text="Hat" VerticalAlignment="Top" Width="27"/>
+        <Button Content=">>" HorizontalAlignment="Left" Margin="262,41,0,0" VerticalAlignment="Top" Width="35" Click="Button_Click_1" Height="17" FontSize="10"/>
+        <Button Content="Pre" HorizontalAlignment="Left" Margin="170,41,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click_2" Height="17" FontSize="10"/>
+        <TextBlock HorizontalAlignment="Left" Margin="222,101,0,0" TextWrapping="Wrap" Text="Shirt" VerticalAlignment="Top" Width="27"/>
+        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="262,101,0,0" VerticalAlignment="Top" Width="35" Click="Button_Click_1" Height="17" FontSize="10"/>
+        <Button Content="Pre" HorizontalAlignment="Left" Margin="170,101,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click_2" Height="17" FontSize="10"/>
+        <Button Content="Pre" HorizontalAlignment="Left" Margin="170,161,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click_2" Height="17" FontSize="10"/>
+        <TextBlock HorizontalAlignment="Left" Margin="222,161,0,0" TextWrapping="Wrap" Text="Boots" VerticalAlignment="Top" Width="34"/>
+        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="262,161,0,0" VerticalAlignment="Top" Width="35" Click="Button_Click_1" Height="17" FontSize="10"/>
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="23" Margin="26,222,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Width="120"/>
+        <Label Content="HP" HorizontalAlignment="Left" Margin="26,305,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="MP" HorizontalAlignment="Left" Margin="26,344,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.529,0.679"/>
+        <Label Content="DEF" HorizontalAlignment="Left" Margin="26,390,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="HPBox" HorizontalAlignment="Left" Height="22" Margin="96,309,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93"/>
+        <TextBox x:Name="LevelBox" HorizontalAlignment="Left" Height="23" Margin="26,250,0,0" TextWrapping="Wrap" Text="Character Level" VerticalAlignment="Top" Width="120"/>
+        <Label Content="STR" HorizontalAlignment="Left" Margin="26,435,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="INTEL" HorizontalAlignment="Left" Margin="26,484,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="DEX" HorizontalAlignment="Left" Margin="26,530,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="MPBox" HorizontalAlignment="Left" Height="20" Margin="96,350,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93"/>
+        <TextBox x:Name="DEFBox" HorizontalAlignment="Left" Height="22" Margin="96,394,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93"/>
+        <TextBox x:Name="STRGBox" HorizontalAlignment="Left" Height="22" Margin="96,439,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93"/>
+        <TextBox x:Name="INTELBox" HorizontalAlignment="Left" Height="22" Margin="96,484,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93"/>
+        <TextBox x:Name="DEXBox" HorizontalAlignment="Left" Height="22" Margin="96,530,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="93"/>
+        <TextBlock HorizontalAlignment="Left" Margin="250,309,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="250,348,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="250,394,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="250,439,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="250,484,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="250,530,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,305,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,344,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,390,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,439,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,484,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,527,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,305,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,344,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,390,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,439,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,484,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,527,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="=" HorizontalAlignment="Left" Margin="360,305,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="=" HorizontalAlignment="Left" Margin="360,344,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="=" HorizontalAlignment="Left" Margin="360,390,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="=" HorizontalAlignment="Left" Margin="360,439,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="=" HorizontalAlignment="Left" Margin="360,484,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="=" HorizontalAlignment="Left" Margin="360,527,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="403,309,0,0" TextWrapping="Wrap" Text="Total HP" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="403,348,0,0" TextWrapping="Wrap" Text="Total MP" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="403,394,0,0" TextWrapping="Wrap" Text="Total DEF" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="403,439,0,0" TextWrapping="Wrap" Text="Total STR" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="403,484,0,0" TextWrapping="Wrap" Text="Total INTEL" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBlock HorizontalAlignment="Left" Margin="403,530,0,0" TextWrapping="Wrap" Text="Total DEX" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBox x:Name="FileName" HorizontalAlignment="Left" Height="23" Margin="526,399,0,0" TextWrapping="Wrap" Text="File Name" VerticalAlignment="Top" Width="211"/>
+        <Button x:Name="LoadButtom" Content="Load" HorizontalAlignment="Left" Margin="526,435,0,0" VerticalAlignment="Top" Width="72" Height="19"/>
+        <Button x:Name="SaveButtom" Content="Save" HorizontalAlignment="Left" Margin="665,435,0,0" VerticalAlignment="Top" Width="72" Height="19"/>
+        <ComboBox HorizontalAlignment="Left" Margin="661,20,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox HorizontalAlignment="Left" Margin="661,101,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox HorizontalAlignment="Left" Margin="661,171,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
     </Grid>
 </Window>
