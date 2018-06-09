@@ -1,5 +1,4 @@
-﻿using RPGCharacterEditor.WIP_CharacterStats;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
+using RPGCharacterEditor.WIP_Character;
+using FinaleAssignment_CharacterEdit.WIP_SaveLoad;
 
 namespace RPGCharacterEditor
 {
@@ -22,10 +23,14 @@ namespace RPGCharacterEditor
     /// </summary>
     public partial class Editor : Window
     {
-        private BaseStatsManager baseStatsManager;
+        //Properties
+        private Character character;
+        private Serializer serializer;
+
         public Editor()
         {
-            baseStatsManager = new BaseStatsManager();
+            character = new Character();
+            serializer = new Serializer();
             InitializeComponent();
         }
         private void HPBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -39,7 +44,7 @@ namespace RPGCharacterEditor
                 }
                 else
                 {
-                    baseStatsManager.mStats.mHealth = result;
+                    character.baseStatsManager.mStats.mHealth = result;
                 }
             }
             else
@@ -57,7 +62,7 @@ namespace RPGCharacterEditor
 
         private void NameBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            baseStatsManager.mStats.mName = NameBox.Text;
+            character.baseStatsManager.mStats.mName = NameBox.Text;
         }
 
         private void LevelBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -70,7 +75,7 @@ namespace RPGCharacterEditor
                 }
                 else
                 {
-                    baseStatsManager.mStats.mLevel = result;
+                    character.baseStatsManager.mStats.mLevel = result;
                 }
             }
             else
@@ -96,7 +101,7 @@ namespace RPGCharacterEditor
                 }
                 else
                 {
-                    baseStatsManager.mStats.mMP = result;
+                    character.baseStatsManager.mStats.mMP = result;
                 }
             }
             else
@@ -122,7 +127,7 @@ namespace RPGCharacterEditor
                 }
                 else
                 {
-                    baseStatsManager.mStats.mDefense = result;
+                    character.baseStatsManager.mStats.mDefense = result;
                 }
             }
             else
@@ -148,7 +153,7 @@ namespace RPGCharacterEditor
                 }
                 else
                 {
-                    baseStatsManager.mStats.mStrength = result;
+                    character.baseStatsManager.mStats.mStrength = result;
                 }
 
             }
@@ -175,7 +180,7 @@ namespace RPGCharacterEditor
                 }
                 else
                 {
-                    baseStatsManager.mStats.mIntelligence = result;
+                    character.baseStatsManager.mStats.mIntelligence = result;
                 }
             }
             else
@@ -201,7 +206,7 @@ namespace RPGCharacterEditor
                 }
                 else
                 {
-                    baseStatsManager.mStats.mDexterity = result;
+                    character.baseStatsManager.mStats.mDexterity = result;
                 }
             }
             else
@@ -214,6 +219,15 @@ namespace RPGCharacterEditor
                 {
                     System.Windows.MessageBox.Show("Invalid Dexterity");
                 }
+            }
+        }
+
+        private void SaveButtom_Click(object sender, RoutedEventArgs e)
+        {
+            if (FileNameBox.Text != string.Empty)
+            {
+                string path = FileNameBox.Text + ".xml";
+                serializer.Save(character, path);
             }
         }
     }

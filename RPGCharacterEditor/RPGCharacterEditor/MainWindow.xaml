@@ -69,9 +69,9 @@
         <TextBlock HorizontalAlignment="Left" Margin="403,439,0,0" TextWrapping="Wrap" Text="Total STR" VerticalAlignment="Top" Height="22" Width="105"/>
         <TextBlock HorizontalAlignment="Left" Margin="403,484,0,0" TextWrapping="Wrap" Text="Total INTEL" VerticalAlignment="Top" Height="22" Width="105"/>
         <TextBlock HorizontalAlignment="Left" Margin="403,530,0,0" TextWrapping="Wrap" Text="Total DEX" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBox x:Name="FileName" HorizontalAlignment="Left" Height="23" Margin="526,399,0,0" TextWrapping="Wrap" Text="File Name" VerticalAlignment="Top" Width="211"/>
+        <TextBox x:Name="FileNameBox" HorizontalAlignment="Left" Height="23" Margin="526,399,0,0" TextWrapping="Wrap" Text="File Name" VerticalAlignment="Top" Width="211"/>
         <Button x:Name="LoadButtom" Content="Load" HorizontalAlignment="Left" Margin="526,435,0,0" VerticalAlignment="Top" Width="72" Height="19"/>
-        <Button x:Name="SaveButtom" Content="Save" HorizontalAlignment="Left" Margin="665,435,0,0" VerticalAlignment="Top" Width="72" Height="19"/>
+        <Button x:Name="SaveButtom" Content="Save" HorizontalAlignment="Left" Margin="665,435,0,0" VerticalAlignment="Top" Width="72" Height="19" Click="SaveButtom_Click"/>
         <ComboBox HorizontalAlignment="Left" Margin="661,20,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox HorizontalAlignment="Left" Margin="661,101,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox HorizontalAlignment="Left" Margin="661,171,0,0" VerticalAlignment="Top" Width="120"/>
