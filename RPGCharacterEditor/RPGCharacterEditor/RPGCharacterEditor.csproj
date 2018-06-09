@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="WIP_CharacterStats\BaseStats.cs" />
+    <Compile Include="WIP_CharacterStats\BaseStatsManager.cs" />
     <Compile Include="WIP_EquippableItems\BonusStats.cs" />
     <Compile Include="WIP_EquippableItems\BootsEquipDropDownList.cs" />
     <Compile Include="WIP_EquippableItems\ChestEquipDropDownList.cs" />
