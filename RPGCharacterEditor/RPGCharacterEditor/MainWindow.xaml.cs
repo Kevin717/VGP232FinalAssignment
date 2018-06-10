@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using RPGCharacterEditor.WIP_Character;
 using FinaleAssignment_CharacterEdit.WIP_SaveLoad;
+using System.IO;
 
 namespace RPGCharacterEditor
 {
@@ -229,6 +230,21 @@ namespace RPGCharacterEditor
                 string path = FileNameBox.Text + ".xml";
                 serializer.Save(character, path);
             }
+        }
+
+        private void LoadButtom_Click(object sender, RoutedEventArgs e)
+        {
+            character = serializer.Load();
+            FileNameBox.Text = "LoadFILe.xml";
+
+            NameBox.Text    = character.baseStatsManager.mStats.mName;
+            LevelBox.Text   = character.baseStatsManager.mStats.mLevel.ToString();
+            HPBox.Text      = character.baseStatsManager.mStats.mHealth.ToString();
+            MPBox.Text      = character.baseStatsManager.mStats.mMP.ToString();
+            DEFBox.Text     = character.baseStatsManager.mStats.mDefense.ToString();
+            STRBox.Text     = character.baseStatsManager.mStats.mStrength.ToString();
+            INTELBox.Text   = character.baseStatsManager.mStats.mIntelligence.ToString();
+            DEXBox.Text     = character.baseStatsManager.mStats.mDexterity.ToString();
         }
     }
 }
