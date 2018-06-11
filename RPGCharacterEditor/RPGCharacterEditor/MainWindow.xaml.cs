@@ -234,6 +234,11 @@ namespace RPGCharacterEditor
             if (FileNameBox.Text != string.Empty)
             {
                 string path = FileNameBox.Text + ".xml";
+                //Updating character 
+                character.boots_index = sprite_editor.boots_index;
+                character.hat_index   = sprite_editor.hat_index;
+                character.shirt_index = sprite_editor.shirt_index; 
+
                 serializer.Save(character, path);
             }
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinaleAssignment_CharacterEdit.WIP_Inventory
 {
-    class ItemList
+    public class ItemList
     {
     }
 }
