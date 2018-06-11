@@ -36,8 +36,8 @@ namespace RPGCharacterEditor
         {
             character = new Character();
             serializer = new Serializer();
-            sprite_editor.Load(image_body, image_hat, image_shirt, image_boots);
             InitializeComponent();
+            sprite_editor.Load(image_body, image_hat, image_shirt, image_boots);
         }
         private void HPBox_TextChanged(object sender, TextChangedEventArgs e)
         {
