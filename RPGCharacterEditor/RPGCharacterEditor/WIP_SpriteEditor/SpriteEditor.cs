@@ -62,10 +62,13 @@ namespace FinaleAssignment_CharacterEdit.WIP_SpriteEdit
             {
                 string mpath;
                 System.Windows.Forms.MessageBox.Show("Cannot locate SpritePreivewBody.png directory, please select body image.");
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "png files (*.png)|*.png";
-                openFileDialog.ShowDialog();
-                mpath = openFileDialog.FileName;
+                do
+                {
+                    OpenFileDialog openFileDialog = new OpenFileDialog();
+                    openFileDialog.Filter = "png files (*.png)|*.png";
+                    openFileDialog.ShowDialog();
+                    mpath = openFileDialog.FileName;
+                } while (!File.Exists(mpath));
                 if(!Directory.Exists(path_images))
                 {
                     Directory.CreateDirectory(path_images);
