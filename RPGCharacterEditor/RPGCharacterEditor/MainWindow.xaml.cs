@@ -255,6 +255,7 @@ namespace RPGCharacterEditor
             STRBox.Text     = character.baseStatsManager.mStats.mStrength.ToString();
             INTELBox.Text   = character.baseStatsManager.mStats.mIntelligence.ToString();
             DEXBox.Text     = character.baseStatsManager.mStats.mDexterity.ToString();
+            sprite_editor.Refresh(character);
         }
 
         //hat buttons

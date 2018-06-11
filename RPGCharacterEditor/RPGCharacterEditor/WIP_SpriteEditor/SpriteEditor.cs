@@ -8,6 +8,7 @@ using System.Windows.Media.Imaging;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+//using FinaleAssignment_CharacterEdit.WIP_CharacterStats;
 
 namespace FinaleAssignment_CharacterEdit.WIP_SpriteEdit
 {
@@ -117,8 +118,41 @@ namespace FinaleAssignment_CharacterEdit.WIP_SpriteEdit
             }
         }
 
-        public void Refresh()
+        public void Refresh(RPGCharacterEditor.WIP_Character.Character mCharacter)
         {
+            try
+            {
+                if (File.Exists(hatlist[mCharacter.hat_index]))
+                {
+                    img_hat.Source = new BitmapImage(new Uri(hatlist[mCharacter.hat_index]));
+                }
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e + "\nThere is no elements initalized in hatlist[" + mCharacter.hat_index + "]");
+            }
+            try
+            {
+                if (File.Exists(shirtlist[mCharacter.shirt_index]))
+                {
+                    img_shirt.Source = new BitmapImage(new Uri(shirtlist[mCharacter.shirt_index]));
+                }
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e + "\nThere is no elements initalized in shirtlist[" + mCharacter.shirt_index + "]");
+            }
+            try
+            {
+                if (File.Exists(bootslist[mCharacter.boots_index]))
+                {
+                    img_boots.Source = new BitmapImage(new Uri(bootslist[mCharacter.boots_index]));
+                }
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e + "\nThere is no elements initalized in bootslist[" + mCharacter.boots_index + "]");
+            }
         }
 
         //Hats functions
