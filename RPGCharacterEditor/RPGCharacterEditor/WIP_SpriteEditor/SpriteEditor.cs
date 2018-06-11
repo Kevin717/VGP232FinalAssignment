@@ -69,7 +69,7 @@ namespace FinaleAssignment_CharacterEdit.WIP_SpriteEdit
                 {
                     Directory.CreateDirectory(path_images);
                 }
-                File.Copy(mpath, path_body, true);
+                File.Copy(mpath, path_body);
                 image_body.Source = new BitmapImage(new Uri(path_body));
             }
 
