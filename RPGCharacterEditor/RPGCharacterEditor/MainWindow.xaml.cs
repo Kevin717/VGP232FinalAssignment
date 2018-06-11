@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using RPGCharacterEditor.WIP_Character;
 using FinaleAssignment_CharacterEdit.WIP_SaveLoad;
+using FinaleAssignment_CharacterEdit.WIP_SpriteEdit;
+using FinaleAssignment_CharacterEdit.WIP_Inventory;
+using FinaleAssignment_CharacterEdit.WIP_EquippableItems;
 using System.IO;
 
 namespace RPGCharacterEditor
@@ -27,11 +30,13 @@ namespace RPGCharacterEditor
         //Properties
         private Character character;
         private Serializer serializer;
+        private SpriteEditor sprite_editor = new SpriteEditor();
 
         public Editor()
         {
             character = new Character();
             serializer = new Serializer();
+            sprite_editor.Load(image_body, image_hat, image_shirt, image_boots);
             InitializeComponent();
         }
         private void HPBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -245,6 +250,54 @@ namespace RPGCharacterEditor
             STRBox.Text     = character.baseStatsManager.mStats.mStrength.ToString();
             INTELBox.Text   = character.baseStatsManager.mStats.mIntelligence.ToString();
             DEXBox.Text     = character.baseStatsManager.mStats.mDexterity.ToString();
+        }
+
+        //hat buttons
+        private void btn_addhat_click(object sender, RoutedEventArgs e)
+        {
+            sprite_editor.Hat_Add();
+        }
+
+        private void btn_next_hat_click(object sender, RoutedEventArgs e)
+        {
+            sprite_editor.Hat_Next();
+        }
+
+        private void btn_prev_hat_click(object sender, RoutedEventArgs e)
+        {
+            sprite_editor.Hat_Prev();
+        }
+
+        //shirt buttons
+        private void btn_add_shirt_click(object sender, RoutedEventArgs e)
+        {
+            sprite_editor.Shirt_Add();
+        }
+
+        private void btn_prev_shirt_click(object sender, RoutedEventArgs e)
+        {
+            sprite_editor.Shirt_Prev();
+        }
+
+        private void btn_next_shirt_click(object sender, RoutedEventArgs e)
+        {
+            sprite_editor.Shirt_Next();
+        }
+
+        //boots buttons
+        private void btn_add_boots_click(object sender, RoutedEventArgs e)
+        {
+            sprite_editor.Boots_Add();
+        }
+
+        private void btn_prev_boots_click(object sender, RoutedEventArgs e)
+        {
+            sprite_editor.Boots_Prev();
+        }
+
+        private void btn_next_boots_click(object sender, RoutedEventArgs e)
+        {
+            sprite_editor.Boots_Next();
         }
     }
 }

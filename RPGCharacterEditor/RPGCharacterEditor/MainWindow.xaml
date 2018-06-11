@@ -11,20 +11,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <DataGrid HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="199" Margin="430,13,0,0"/>
-        <Button Content="Add hat" HorizontalAlignment="Left" Margin="323,41,0,0" VerticalAlignment="Top" Width="72" Height="21"/>
-        <Button Content="Add shirt" HorizontalAlignment="Left" Margin="323,96,0,0" VerticalAlignment="Top" Width="72" Height="21"/>
-        <Button Content="Add boots" HorizontalAlignment="Left" Margin="323,159,0,0" VerticalAlignment="Top" Width="72" Height="19"/>
-        <Image x:Name="Image" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="131" Margin="26,20,0,0"/>
         <Button Content="Add Item" HorizontalAlignment="Left" Margin="475,216,0,0" VerticalAlignment="Top" Width="97" Height="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,41,0,0" TextWrapping="Wrap" Text="Hat" VerticalAlignment="Top" Width="27"/>
-        <Button Content=">>" HorizontalAlignment="Left" Margin="262,41,0,0" VerticalAlignment="Top" Width="35" Height="17" FontSize="10"/>
-        <Button Content="Pre" HorizontalAlignment="Left" Margin="170,41,0,0" VerticalAlignment="Top" Width="38" Height="17" FontSize="10"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,101,0,0" TextWrapping="Wrap" Text="Shirt" VerticalAlignment="Top" Width="27"/>
-        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="262,101,0,0" VerticalAlignment="Top" Width="35" Height="17" FontSize="10"/>
-        <Button Content="Pre" HorizontalAlignment="Left" Margin="170,101,0,0" VerticalAlignment="Top" Width="38" Height="17" FontSize="10"/>
-        <Button Content="Pre" HorizontalAlignment="Left" Margin="170,161,0,0" VerticalAlignment="Top" Width="38" Height="17" FontSize="10"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,161,0,0" TextWrapping="Wrap" Text="Boots" VerticalAlignment="Top" Width="34"/>
-        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="262,161,0,0" VerticalAlignment="Top" Width="35" Height="17" FontSize="10"/>
         <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="23" Margin="95,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NameBox_TextChanged"/>
         <TextBox x:Name="LevelBox" HorizontalAlignment="Left" Height="23" Margin="96,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="LevelBox_TextChanged"/>
         <Label Content="HP" HorizontalAlignment="Left" Margin="26,305,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
@@ -77,5 +67,20 @@
         <ComboBox HorizontalAlignment="Left" Margin="661,171,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="26,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Level" HorizontalAlignment="Left" Margin="26,266,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <!-- Kevin's Stuff - Do not touch -->
+        <Button x:Name="btn_addhat" Content="Add hat" HorizontalAlignment="Left" Margin="323,41,0,0" VerticalAlignment="Top" Width="72" Height="21" Click="btn_addhat_click"/>
+        <Button x:Name="btn_add_shirt" Content="Add shirt" HorizontalAlignment="Left" Margin="323,96,0,0" VerticalAlignment="Top" Width="72" Height="21" Click="btn_add_shirt_click"/>
+        <Button x:Name="btn_add_boots" Content="Add boots" HorizontalAlignment="Left" Margin="323,159,0,0" VerticalAlignment="Top" Width="72" Height="19" Click="btn_add_boots_click"/>
+        <Button x:Name="btn_next_hat" Content=">>" HorizontalAlignment="Left" Margin="262,41,0,0" VerticalAlignment="Top" Width="35" Height="17" FontSize="10" Click="btn_next_hat_click"/>
+        <Button x:Name="btn_prev_hat" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="170,41,0,0" VerticalAlignment="Top" Width="38" Height="17" FontSize="10" Click="btn_prev_hat_click"/>
+        <Button x:Name="btn_next_shirt" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="262,101,0,0" VerticalAlignment="Top" Width="35" Height="17" FontSize="10" Click="btn_next_shirt_click"/>
+        <Button x:Name="btn_prev_shirt" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="170,101,0,0" VerticalAlignment="Top" Width="38" Height="17" FontSize="10" Click="btn_prev_shirt_click"/>
+        <Button x:Name="btn_prev_boots" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="170,161,0,0" VerticalAlignment="Top" Width="38" Height="17" FontSize="10" Click="btn_prev_boots_click"/>
+        <Button x:Name="btn_next_boots" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="262,161,0,0" VerticalAlignment="Top" Width="35" Height="17" FontSize="10" Click="btn_next_boots_click"/>
+        <Image x:Name="image_body" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="94" Margin="26,13,0,0"/>
+        <Image x:Name="image_hat" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="94" Margin="26,13,0,0"/>
+        <Image x:Name="image_shirt" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="94" Margin="26,13,0,0"/>
+        <Image x:Name="image_boots" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="94" Margin="26,13,0,0"/>
+        <!-- End of Kevin's Stuff -->
     </Grid>
 </Window>
