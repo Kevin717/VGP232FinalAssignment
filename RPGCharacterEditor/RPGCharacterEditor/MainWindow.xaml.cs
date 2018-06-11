@@ -246,8 +246,7 @@ namespace RPGCharacterEditor
         private void LoadButtom_Click(object sender, RoutedEventArgs e)
         {
             character = serializer.Load();
-            FileNameBox.Text = "LoadFILe.xml";
-
+            
             NameBox.Text    = character.baseStatsManager.mStats.mName;
             LevelBox.Text   = character.baseStatsManager.mStats.mLevel.ToString();
             HPBox.Text      = character.baseStatsManager.mStats.mHealth.ToString();

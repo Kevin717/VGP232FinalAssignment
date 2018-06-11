@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using RPGCharacterEditor.WIP_Character;
 using System.IO;
 using System.Xml;
+using System.Windows.Forms;
 
 namespace FinaleAssignment_CharacterEdit.WIP_SaveLoad
 {
@@ -19,16 +20,38 @@ namespace FinaleAssignment_CharacterEdit.WIP_SaveLoad
         public Character Load()
         {
             Character newCharacter;
+            newCharacter = new Character();
+
             System.Xml.Serialization.XmlSerializer reader =
                  new System.Xml.Serialization.XmlSerializer(typeof(Character));
+            string path;
 
-            string path = Directory.GetCurrentDirectory() + "\\" + "LoadFILe.xml";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "xml files (*.xml)|*.xml";
 
-            FileStream mFile = File.OpenRead(path);
-            object loadedData = reader.Deserialize(mFile);
+            do
+            {
+                var dialogResult = openFileDialog.ShowDialog();
+                if (openFileDialog.CheckPathExists)
+                {
+                    path = openFileDialog.FileName;
+                    FileStream mFile = File.OpenRead(path);
 
-            newCharacter = (Character)loadedData;
-            mFile.Close();
+                    if (mFile.Length != 0)
+                    {
+                        object loadedData = reader.Deserialize(mFile);
+
+                        newCharacter = (Character)loadedData;
+                        mFile.Close();
+
+                        return newCharacter;
+                    }
+                    if (dialogResult == DialogResult.Cancel)
+                    {
+                        return newCharacter;
+                    }
+                }
+            } while (!openFileDialog.CheckPathExists);
 
             return newCharacter;
         }
