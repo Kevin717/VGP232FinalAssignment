@@ -29,6 +29,7 @@ namespace RPGCharacterEditor
     {
         //Properties
         private Character character;
+
         private Serializer serializer;
         private SpriteEditor sprite_editor = new SpriteEditor();
 
