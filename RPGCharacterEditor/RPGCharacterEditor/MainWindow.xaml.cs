@@ -19,6 +19,7 @@ using FinaleAssignment_CharacterEdit.WIP_SpriteEdit;
 using FinaleAssignment_CharacterEdit.WIP_Inventory;
 using FinaleAssignment_CharacterEdit.WIP_EquippableItems;
 using System.IO;
+using RPGCharacterEditor.WIP_Inventory;
 
 namespace RPGCharacterEditor
 {
@@ -31,10 +32,11 @@ namespace RPGCharacterEditor
         private Character character;
         public ItemList myItemList = new ItemList();
         public Inventory pItems = new Inventory();
-
+        
 
         private Serializer serializer;
         private SpriteEditor sprite_editor = new SpriteEditor();
+        WindowAddItem window_additem = new WindowAddItem();
         
         public Editor()
         {
@@ -49,6 +51,7 @@ namespace RPGCharacterEditor
             pItems.Add(4);
             pItems.Add(3);
             pItems.Add(2);
+            window_additem.Load(ref window_main);
             InventoryList.ItemsSource = pItems.inventory;
         }
         private void HPBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -317,9 +320,17 @@ namespace RPGCharacterEditor
             sprite_editor.Boots_Next();
         }
 
-        private void Bttn_AddItem(object sender, RoutedEventArgs e)
+        private void btn_additem_click(object sender, RoutedEventArgs e)
         {
+            window_additem.listview_allitems.ItemsSource = myItemList.GetItems();
             
+            window_additem.Show();
+        }
+
+        public void Refresh_Inventory(Inventory mitems)
+        {
+            InventoryList.ItemsSource = mitems.inventory;
+            InventoryList.Items.Refresh();
         }
     }
 }

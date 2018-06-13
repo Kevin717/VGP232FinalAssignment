@@ -11,10 +11,11 @@ namespace FinaleAssignment_CharacterEdit.WIP_Inventory
 
 
         private List<Item> allitems;
-        public List<Item> inventory = new List<Item>();
+        public List<Item> inventory { get; set; }
 
         public Inventory()
         {
+            inventory = new List<Item>();
         }
 
         public void Load(List<Item> AllItems)
@@ -23,9 +24,24 @@ namespace FinaleAssignment_CharacterEdit.WIP_Inventory
         }
 
         //adding to player inventory through list id number
-        public void Add(int itemID)
+        public void Add(int itemID, int amount = 1)
         {
-            inventory.Add(allitems[itemID]);
+            bool itemexist = false;
+            for (int i = 0; i < inventory.Count(); i++)
+            {
+                if(inventory[i].mItemName == allitems[itemID].mItemName)
+                {
+                    inventory[i].mItemAmount += amount;
+                    itemexist = true;
+                    break;
+                }
+            }
+            if(!itemexist)
+            {
+                inventory.Add(allitems[itemID]);
+                inventory[inventory.Count - 1].mItemAmount = amount;
+            }
         }
+        
     }
 }

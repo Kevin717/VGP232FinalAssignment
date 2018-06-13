@@ -1,0 +1,15 @@
+﻿<Window x:Class="RPGCharacterEditor.WIP_Inventory.WindowAddItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPGCharacterEditor.WIP_Inventory"
+        mc:Ignorable="d"
+        Title="WindowAddItem" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btn_additem_confirm" Content="Confirm" HorizontalAlignment="Left" Margin="706,389,0,0" VerticalAlignment="Top" Width="76" Click="btn_additem_confirm_click"/>
+        <TextBox x:Name="text_additem_amount" HorizontalAlignment="Left" Height="24" Margin="662,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="listview_allitems" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="637"/>
+        <TextBlock HorizontalAlignment="Left" Margin="662,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Amount"/><LineBreak/><Run/></TextBlock>
+    </Grid>
+</Window>

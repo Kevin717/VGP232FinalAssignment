@@ -66,6 +66,9 @@
     <Compile Include="WIP_Inventory\Inventory.cs" />
     <Compile Include="WIP_Inventory\Item.cs" />
     <Compile Include="WIP_Inventory\ItemList.cs" />
+    <Compile Include="WIP_Inventory\WindowAddItem.xaml.cs">
+      <DependentUpon>WindowAddItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WIP_SaveLoad\SaveLoad.cs" />
     <Compile Include="WIP_SpriteEditor\SpriteEditor.cs" />
     <Page Include="MainWindow.xaml">
@@ -80,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WIP_Inventory\WindowAddItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
