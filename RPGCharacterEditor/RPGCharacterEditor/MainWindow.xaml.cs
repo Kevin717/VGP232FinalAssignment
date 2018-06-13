@@ -29,12 +29,14 @@ namespace RPGCharacterEditor
     {
         //Properties
         private Character character;
-
+        private Inventory pItems;
+        private ItemList items;
         private Serializer serializer;
         private SpriteEditor sprite_editor = new SpriteEditor();
-
+        ItemList item;
         public Editor()
         {
+            
             character = new Character();
             serializer = new Serializer();
             InitializeComponent();
@@ -304,6 +306,11 @@ namespace RPGCharacterEditor
         private void btn_next_boots_click(object sender, RoutedEventArgs e)
         {
             sprite_editor.Boots_Next();
+        }
+
+        private void Bttn_AddItem(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -10,8 +10,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="199" Margin="430,13,0,0"/>
-        <Button Content="Add Item" HorizontalAlignment="Left" Margin="475,216,0,0" VerticalAlignment="Top" Width="97" Height="20"/>
+        <DataGrid x:Name="InventoryList" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="199" Margin="430,13,0,0"/>
+        <Button x:Name="AddItem" Content="Add Item" HorizontalAlignment="Left" Margin="475,216,0,0" VerticalAlignment="Top" Width="97" Height="20" Click="Bttn_AddItem"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,41,0,0" TextWrapping="Wrap" Text="Hat" VerticalAlignment="Top" Width="27"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,101,0,0" TextWrapping="Wrap" Text="Shirt" VerticalAlignment="Top" Width="27"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,161,0,0" TextWrapping="Wrap" Text="Boots" VerticalAlignment="Top" Width="34"/>
