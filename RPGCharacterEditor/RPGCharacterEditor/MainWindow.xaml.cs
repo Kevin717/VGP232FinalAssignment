@@ -29,16 +29,17 @@ namespace RPGCharacterEditor
     {
         //Properties
         private Character character;
-        private Inventory pItems;
         private ItemList items;
+        private List<Inventory> pItems = new List<Inventory>();
+       
         
         private Serializer serializer;
         private SpriteEditor sprite_editor = new SpriteEditor();
         
         public Editor()
         {
-
-            pItems = new Inventory(items);
+            items = new ItemList();
+            
             character = new Character();
             serializer = new Serializer();
             InitializeComponent();
