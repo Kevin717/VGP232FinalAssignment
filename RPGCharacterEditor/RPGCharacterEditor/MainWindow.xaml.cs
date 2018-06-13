@@ -31,16 +31,19 @@ namespace RPGCharacterEditor
         private Character character;
         private Inventory pItems;
         private ItemList items;
+        
         private Serializer serializer;
         private SpriteEditor sprite_editor = new SpriteEditor();
-        ItemList item;
+        
         public Editor()
         {
-            
+
+            pItems = new Inventory(items);
             character = new Character();
             serializer = new Serializer();
             InitializeComponent();
             sprite_editor.Load(image_body, image_hat, image_shirt, image_boots);
+            InventoryList.ItemsSource = pItems;
         }
         private void HPBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -310,7 +313,7 @@ namespace RPGCharacterEditor
 
         private void Bttn_AddItem(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
