@@ -9,22 +9,23 @@ namespace FinaleAssignment_CharacterEdit.WIP_Inventory
     public class Inventory
     {
 
-        
-        List<Item> Listofitems;
-        List<Item> inventory = new List<Item>();
-        public Inventory(ItemList itemList)
+
+        private List<Item> allitems;
+        public List<Item> inventory = new List<Item>();
+
+        public Inventory()
         {
-            Listofitems = itemList.GetItems();
-            
-            
         }
 
-        
+        public void Load(List<Item> AllItems)
+        {
+            allitems = AllItems;
+        }
 
         //adding to player inventory through list id number
         public void Add(int itemID)
         {
-            inventory.Add(Listofitems[itemID]); 
+            inventory.Add(allitems[itemID]);
         }
     }
 }

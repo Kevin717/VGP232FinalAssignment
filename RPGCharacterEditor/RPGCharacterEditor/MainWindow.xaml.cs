@@ -29,22 +29,27 @@ namespace RPGCharacterEditor
     {
         //Properties
         private Character character;
-        private ItemList items;
-        private List<Inventory> pItems = new List<Inventory>();
-       
-        
+        public ItemList myItemList = new ItemList();
+        public Inventory pItems = new Inventory();
+
+
         private Serializer serializer;
         private SpriteEditor sprite_editor = new SpriteEditor();
         
         public Editor()
         {
-            items = new ItemList();
+            
             
             character = new Character();
             serializer = new Serializer();
             InitializeComponent();
             sprite_editor.Load(image_body, image_hat, image_shirt, image_boots);
-            InventoryList.ItemsSource = pItems;
+            pItems.Load(myItemList.GetItems());
+            pItems.Add(0);
+            pItems.Add(4);
+            pItems.Add(3);
+            pItems.Add(2);
+            InventoryList.ItemsSource = pItems.inventory;
         }
         private void HPBox_TextChanged(object sender, TextChangedEventArgs e)
         {
