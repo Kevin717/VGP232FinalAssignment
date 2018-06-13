@@ -12,13 +12,13 @@ namespace FinaleAssignment_CharacterEdit.WIP_Inventory
         
         public ItemList()
         {
-            itemList.Add(new Item("Potion", ItemType.consumable, ItemEffect.RestoreHp));
-            itemList.Add(new Item("Ether", ItemType.consumable, ItemEffect.RestoreMp));
-            itemList.Add(new Item("Leather Hide", ItemType.miscellaneous, ItemEffect.None));
+            itemList.Add(new Item("Potion", ItemType.consumable, ItemEffect.RestoreHp, 1,false,20));
+            itemList.Add(new Item("Ether", ItemType.consumable, ItemEffect.RestoreMp,1,false,10));
+            itemList.Add(new Item("Leather Hide", ItemType.miscellaneous, ItemEffect.None ));
             itemList.Add(new Item("Rubber Object", ItemType.miscellaneous, ItemEffect.None));
-            itemList.Add(new Item("IronSword", ItemType.equipment, ItemEffect.Damage));
+            itemList.Add(new Item("IronSword", ItemType.equipment, ItemEffect.Damage,1));
             itemList.Add(new Item("Leather Hat", ItemType.equipment, ItemEffect.Defence));
-
+            
 
 
         }
