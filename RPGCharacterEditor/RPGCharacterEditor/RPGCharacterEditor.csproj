@@ -59,10 +59,7 @@
     <Compile Include="WIP_CharacterStats\BaseStats.cs" />
     <Compile Include="WIP_CharacterStats\BaseStatsManager.cs" />
     <Compile Include="WIP_Character\Character.cs" />
-    <Compile Include="WIP_EquippableItems\BonusStats.cs" />
-    <Compile Include="WIP_EquippableItems\BootsEquipDropDownList.cs" />
-    <Compile Include="WIP_EquippableItems\ChestEquipDropDownList.cs" />
-    <Compile Include="WIP_EquippableItems\HeadEquipDropDownList.cs" />
+    <Compile Include="WIP_EquippableItems\EquippedItems.cs" />
     <Compile Include="WIP_Inventory\Inventory.cs" />
     <Compile Include="WIP_Inventory\Item.cs" />
     <Compile Include="WIP_Inventory\ItemList.cs" />

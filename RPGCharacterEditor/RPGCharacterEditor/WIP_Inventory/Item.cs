@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinaleAssignment_CharacterEdit.WIP_Inventory
 {
-    public enum ItemType { consumable, miscellaneous, equipment }
+    public enum ItemType { consumable, miscellaneous, equipmentWeapon, equipmentHelm, equipmentChest }
     public enum ItemEffect {RestoreHp, RestoreMp,None,Damage, Defence}
     public class Item
     {
@@ -14,19 +14,19 @@ namespace FinaleAssignment_CharacterEdit.WIP_Inventory
         public int mItemAmount { get; set; }
         public int mDam { get; set; }
         
-        bool mEquiped { get; set; }
+        public bool mEquiped { get; set; }
         public ItemType mItemtype { get; set; }
         public ItemEffect mItemEff { get; set; }
         public int mAmountRestored { get; set; }
-        public float mHealth { get; set; }
-        public float mMP { get; set; }
-        public float mDefense { get; set; }
-        public float mStrength { get; set; }
-        public float mIntelligence { get; set; }
-        public float mDexterity { get; set; }
+        public int mHealth { get; set; }
+        public int mMP { get; set; }
+        public int mDefense { get; set; }
+        public int mStrength { get; set; }
+        public int mIntelligence { get; set; }
+        public int mDexterity { get; set; }
 
         public Item(string itemName, ItemType itemtype, ItemEffect itemEff, int itemAmount = 1, bool equiped = false,int AmountRestored = -1,int Damage = -1,
-            float HP = -1,float MP = -1,float Defence = -1,float Str = -1,float Int =-1 ,float Dex= -1 )
+            int HP = -1,int MP = -1,int Defence = -1,int Str = -1,int Int =-1 ,int Dex= -1 )
         {
             this.mItemEff = itemEff;
             this.mItemName = itemName;
@@ -41,7 +41,7 @@ namespace FinaleAssignment_CharacterEdit.WIP_Inventory
             this.mMP = MP;
             this.mDexterity = Dex;
             this.mIntelligence = Int;
-            if(mItemtype == ItemType.equipment)
+            if(mItemtype == ItemType.equipmentWeapon || mItemtype == ItemType.equipmentHelm || mItemtype == ItemType.equipmentChest)
             {
                 if(mStrength < 0)
                     mStrength = 0;

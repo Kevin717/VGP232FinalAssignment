@@ -36,7 +36,6 @@ namespace RPGCharacterEditor.WIP_Inventory
 
         private void btn_additem_confirm_click(object sender, RoutedEventArgs e)
         {
-            int id;
             int amount;
         
             if (text_additem_amount.Text != "")

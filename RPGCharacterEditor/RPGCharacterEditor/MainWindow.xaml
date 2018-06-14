@@ -5,66 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPGCharacterEditor"
         mc:Ignorable="d"
-        Title="RPG Character Editor" Height="621.483" Width="800.547">
+        Title="RPG Character Editor" Height="621.483" Width="800.547" Closing="window_main_closing">
     <Grid Margin="0,0,2,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="InventoryList" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="199" Margin="430,13,0,0"/>
+        <DataGrid x:Name="InventoryList" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="199" Margin="430,13,0,0" IsReadOnly="True"/>
         <Button x:Name="btn_additem" Content="Add Item" HorizontalAlignment="Left" Margin="475,216,0,0" VerticalAlignment="Top" Width="97" Height="20" Click="btn_additem_click"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,41,0,0" TextWrapping="Wrap" Text="Hat" VerticalAlignment="Top" Width="27"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,101,0,0" TextWrapping="Wrap" Text="Shirt" VerticalAlignment="Top" Width="27"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,161,0,0" TextWrapping="Wrap" Text="Boots" VerticalAlignment="Top" Width="34"/>
-        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="23" Margin="95,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NameBox_TextChanged"/>
-        <TextBox x:Name="LevelBox" HorizontalAlignment="Left" Height="23" Margin="96,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="LevelBox_TextChanged"/>
-        <Label Content="HP" HorizontalAlignment="Left" Margin="26,305,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="MP" HorizontalAlignment="Left" Margin="26,344,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.529,0.679"/>
-        <Label Content="DEF" HorizontalAlignment="Left" Margin="26,390,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="HPBox" HorizontalAlignment="Left" Height="22" Margin="96,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextChanged="HPBox_TextChanged"/>
-        <Label Content="STR" HorizontalAlignment="Left" Margin="26,435,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="INTEL" HorizontalAlignment="Left" Margin="26,484,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="DEX" HorizontalAlignment="Left" Margin="26,530,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="MPBox" HorizontalAlignment="Left" Height="20" Margin="96,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextChanged="MPBox_TextChanged"/>
-        <TextBox x:Name="DEFBox" HorizontalAlignment="Left" Height="22" Margin="96,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextChanged="DEFBox_TextChanged"/>
-        <TextBox x:Name="STRBox" HorizontalAlignment="Right" Height="22" Margin="0,439,588,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextChanged="STRGBox_TextChanged"/>
-        <TextBox x:Name="INTELBox" HorizontalAlignment="Left" Height="22" Margin="96,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextChanged="INTELBox_TextChanged"/>
-        <TextBox x:Name="DEXBox" HorizontalAlignment="Left" Height="22" Margin="96,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextChanged="DEXBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="250,309,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="250,348,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="250,394,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="250,439,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="250,484,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="250,530,0,0" TextWrapping="Wrap" Text="Equipment Bonus" VerticalAlignment="Top" Height="22" Width="105"/>
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="23" Margin="75,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NameBox_TextChanged"/>
+        <TextBox x:Name="LevelBox" HorizontalAlignment="Left" Height="23" Margin="75,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="LevelBox_TextChanged"/>
+        <Label Content="HP" HorizontalAlignment="Left" Margin="21,305,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="MP" HorizontalAlignment="Left" Margin="21,344,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.529,0.679"/>
+        <Label Content="DEF" HorizontalAlignment="Left" Margin="21,390,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="HPBox" HorizontalAlignment="Left" Height="23" Margin="75,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="HPBox_TextChanged"/>
+        <Label Content="STR" HorizontalAlignment="Left" Margin="21,435,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="INTEL" HorizontalAlignment="Left" Margin="21,477,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="DEX" HorizontalAlignment="Left" Margin="21,521,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="MPBox" HorizontalAlignment="Left" Height="23" Margin="75,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="MPBox_TextChanged"/>
+        <TextBox x:Name="DEFBox" HorizontalAlignment="Left" Height="23" Margin="75,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="DEFBox_TextChanged"/>
+        <TextBox x:Name="STRBox" HorizontalAlignment="Left" Height="23" Margin="75,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="STRGBox_TextChanged"/>
+        <TextBox x:Name="INTELBox" HorizontalAlignment="Left" Height="23" Margin="75,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="INTELBox_TextChanged"/>
+        <TextBox x:Name="DEXBox" HorizontalAlignment="Left" Height="23" Margin="75,524,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="DEXBox_TextChanged"/>
         <Label Content="+" HorizontalAlignment="Left" Margin="203,305,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="+" HorizontalAlignment="Left" Margin="203,344,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="+" HorizontalAlignment="Left" Margin="203,390,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="+" HorizontalAlignment="Left" Margin="203,439,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="+" HorizontalAlignment="Left" Margin="203,484,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="+" HorizontalAlignment="Left" Margin="203,527,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,384,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,429,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,475,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="+" HorizontalAlignment="Left" Margin="203,521,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="+" HorizontalAlignment="Left" Margin="203,305,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="+" HorizontalAlignment="Left" Margin="203,344,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="+" HorizontalAlignment="Left" Margin="203,390,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="+" HorizontalAlignment="Left" Margin="203,439,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="+" HorizontalAlignment="Left" Margin="203,484,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <Label Content="+" HorizontalAlignment="Left" Margin="203,527,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="=" HorizontalAlignment="Left" Margin="360,305,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="=" HorizontalAlignment="Left" Margin="360,344,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="=" HorizontalAlignment="Left" Margin="360,390,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="=" HorizontalAlignment="Left" Margin="360,439,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="=" HorizontalAlignment="Left" Margin="360,484,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="=" HorizontalAlignment="Left" Margin="360,527,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Margin="403,309,0,0" TextWrapping="Wrap" Text="Total HP" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="403,348,0,0" TextWrapping="Wrap" Text="Total MP" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="403,394,0,0" TextWrapping="Wrap" Text="Total DEF" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="403,439,0,0" TextWrapping="Wrap" Text="Total STR" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="403,484,0,0" TextWrapping="Wrap" Text="Total INTEL" VerticalAlignment="Top" Height="22" Width="105"/>
-        <TextBlock HorizontalAlignment="Left" Margin="403,530,0,0" TextWrapping="Wrap" Text="Total DEX" VerticalAlignment="Top" Height="22" Width="105"/>
         <TextBox x:Name="FileNameBox" HorizontalAlignment="Left" Height="23" Margin="526,399,0,0" TextWrapping="Wrap" Text="File Name" VerticalAlignment="Top" Width="211"/>
         <Button x:Name="LoadButtom" Content="Load" HorizontalAlignment="Left" Margin="526,435,0,0" VerticalAlignment="Top" Width="72" Height="19" Click="LoadButtom_Click"/>
         <Button x:Name="SaveButtom" Content="Save" HorizontalAlignment="Left" Margin="665,435,0,0" VerticalAlignment="Top" Width="72" Height="19" Click="SaveButtom_Click"/>
-        <ComboBox HorizontalAlignment="Left" Margin="661,20,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="661,101,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="661,171,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="dropdown_equip_helm" HorizontalAlignment="Left" Margin="661,20,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding helmlist.mItemName}" SelectionChanged="dropdown_equip_helm_changed"/>
+        <ComboBox x:Name="dropdown_equip_chest" HorizontalAlignment="Left" Margin="661,95,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding chestlist.mItemName}" SelectionChanged="dropdown_equip_chest_changed"/>
+        <ComboBox x:Name="dropdown_equip_weapon" HorizontalAlignment="Left" Margin="661,179,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding weaponlist.mItemName}" SelectionChanged="dropdown_equip_weapon_changed"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="26,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Level" HorizontalAlignment="Left" Margin="26,266,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <!-- Kevin's Stuff - Do not touch -->
@@ -81,6 +65,18 @@
         <Image x:Name="image_hat" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="94" Margin="26,13,0,0"/>
         <Image x:Name="image_shirt" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="94" Margin="26,13,0,0"/>
         <Image x:Name="image_boots" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="94" Margin="26,13,0,0"/>
+        <TextBox x:Name="text_bonusHP" HorizontalAlignment="Left" Height="23" Margin="235,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_bonusMP" HorizontalAlignment="Left" Height="23" Margin="235,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_bonusDEF" HorizontalAlignment="Left" Height="23" Margin="235,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_bonusSTR" HorizontalAlignment="Left" Height="23" Margin="235,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_bonusINT" HorizontalAlignment="Left" Height="23" Margin="235,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_bonusDEX" HorizontalAlignment="Left" Height="23" Margin="235,524,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_totalHP" HorizontalAlignment="Left" Height="23" Margin="387,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_totalMP" HorizontalAlignment="Left" Height="23" Margin="387,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_totalDEF" HorizontalAlignment="Left" Height="23" Margin="387,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_totalSTR" HorizontalAlignment="Left" Height="23" Margin="387,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_totalINT" HorizontalAlignment="Left" Height="23" Margin="387,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <TextBox x:Name="text_totalDEX" HorizontalAlignment="Left" Height="23" Margin="387,524,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
         <!-- End of Kevin's Stuff -->
     </Grid>
 </Window>
