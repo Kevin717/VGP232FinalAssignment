@@ -261,7 +261,9 @@ namespace RPGCharacterEditor
         {
             //Updating the inventory of the player
             character.inventory = pItems.inventory;
-
+            character.helm_index = equipped_items.helm_index;
+            character.weapon_index = equipped_items.weapon_index;
+            character.chest_index = equipped_items.chest_index;
             if (FileNameBox.Text != string.Empty)
             {
                 string path = FileNameBox.Text + ".xml";
@@ -292,6 +294,11 @@ namespace RPGCharacterEditor
                 equipped_items.mInv.inventory = character.inventory;
                 equipped_items.Refresh();
                 equipped_items.CalculateStats();
+
+                //Updating Dropdowns
+                dropdown_equip_chest.SelectedIndex  = character.chest_index;
+                dropdown_equip_helm.SelectedIndex   = character.helm_index;
+                dropdown_equip_weapon.SelectedIndex = character.weapon_index;
 
                 //Updating UI
                 UpdateText();
