@@ -29,35 +29,35 @@ namespace RPGCharacterEditor
     public partial class Editor : Window
     {
         //Properties
-        private Character character;
-        public ItemList myItemList = new ItemList();
+        public Character character;
         public Inventory pItems = new Inventory();
-        
+        public ItemList myItemList = new ItemList();
 
         private Serializer serializer;
         private SpriteEditor sprite_editor = new SpriteEditor();
         private EquippedItems equipped_items;
         WindowAddItem window_additem = new WindowAddItem();
-        
+
         public Editor()
         {
-            
-            
             character = new Character();
             serializer = new Serializer();
+
             InitializeComponent();
 
             sprite_editor.Load(image_body, image_hat, image_shirt, image_boots);
             pItems.Load(myItemList.GetItems());
-            pItems.Add(0);
-            pItems.Add(4);
-            pItems.Add(5);
-            pItems.Add(3);
-            pItems.Add(2);
+
+            //pItems.Add(0);
+            //pItems.Add(4);
+            //pItems.Add(5);
+            //pItems.Add(3);
+            //pItems.Add(2);
+
             window_additem.Load(ref window_main);
             InventoryList.ItemsSource = pItems.inventory;
             equipped_items = new EquippedItems(ref pItems, dropdown_equip_weapon, dropdown_equip_helm, dropdown_equip_chest);
-
+            
             dropdown_equip_chest.SelectedIndex = 0;
             dropdown_equip_helm.SelectedIndex = 0;
             dropdown_equip_weapon.SelectedIndex = 0;
@@ -259,6 +259,9 @@ namespace RPGCharacterEditor
 
         private void SaveButtom_Click(object sender, RoutedEventArgs e)
         {
+            //Updating the inventory of the player
+            character.inventory = pItems.inventory;
+
             if (FileNameBox.Text != string.Empty)
             {
                 string path = FileNameBox.Text + ".xml";
@@ -273,17 +276,27 @@ namespace RPGCharacterEditor
 
         private void LoadButtom_Click(object sender, RoutedEventArgs e)
         {
-            character = serializer.Load();
-            
-            NameBox.Text    = character.baseStatsManager.mStats.mName;
-            LevelBox.Text   = character.baseStatsManager.mStats.mLevel.ToString();
-            HPBox.Text      = character.baseStatsManager.mStats.mHealth.ToString();
-            MPBox.Text      = character.baseStatsManager.mStats.mMP.ToString();
-            DEFBox.Text     = character.baseStatsManager.mStats.mDefense.ToString();
-            STRBox.Text     = character.baseStatsManager.mStats.mStrength.ToString();
-            INTELBox.Text   = character.baseStatsManager.mStats.mIntelligence.ToString();
-            DEXBox.Text     = character.baseStatsManager.mStats.mDexterity.ToString();
-            sprite_editor.Refresh(character);
+                character = serializer.Load();
+            if (character != null)
+            {
+                NameBox.Text = character.baseStatsManager.mStats.mName;
+                LevelBox.Text = character.baseStatsManager.mStats.mLevel.ToString();
+                HPBox.Text = character.baseStatsManager.mStats.mHealth.ToString();
+                MPBox.Text = character.baseStatsManager.mStats.mMP.ToString();
+                DEFBox.Text = character.baseStatsManager.mStats.mDefense.ToString();
+                STRBox.Text = character.baseStatsManager.mStats.mStrength.ToString();
+                INTELBox.Text = character.baseStatsManager.mStats.mIntelligence.ToString();
+                DEXBox.Text = character.baseStatsManager.mStats.mDexterity.ToString();
+                sprite_editor.Refresh(character);
+                //Updating equippeditems
+                equipped_items.mInv.inventory = character.inventory;
+                equipped_items.Refresh();
+                equipped_items.CalculateStats();
+
+                //Updating UI
+                UpdateText();
+                Refresh_Inventory(equipped_items.mInv);
+            }
         }
 
         //hat buttons

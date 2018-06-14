@@ -8,8 +8,6 @@ namespace FinaleAssignment_CharacterEdit.WIP_Inventory
 {
     public class Inventory
     {
-
-
         private List<Item> allitems;
         public List<Item> inventory { get; set; }
 
@@ -23,13 +21,13 @@ namespace FinaleAssignment_CharacterEdit.WIP_Inventory
             allitems = AllItems;
         }
 
-        //adding to player inventory through list id number
+        //adding to player inventory through list id number 
         public void Add(int itemID, int amount = 1)
         {
             bool itemexist = false;
             for (int i = 0; i < inventory.Count(); i++)
             {
-                if(inventory[i].mItemName == allitems[itemID].mItemName)
+                if(inventory[i].mItemName == allitems[itemID].mItemName) // Checking if the Item exist, if does increase amount
                 {
                     inventory[i].mItemAmount += amount;
                     itemexist = true;

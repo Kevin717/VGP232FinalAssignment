@@ -25,6 +25,9 @@ namespace FinaleAssignment_CharacterEdit.WIP_Inventory
         public int mIntelligence { get; set; }
         public int mDexterity { get; set; }
 
+        public Item()
+        {
+        }
         public Item(string itemName, ItemType itemtype, ItemEffect itemEff, int itemAmount = 1, bool equiped = false,int AmountRestored = -1,int Damage = -1,
             int HP = -1,int MP = -1,int Defence = -1,int Str = -1,int Int =-1 ,int Dex= -1 )
         {

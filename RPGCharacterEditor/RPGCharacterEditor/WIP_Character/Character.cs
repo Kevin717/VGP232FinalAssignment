@@ -10,9 +10,8 @@ namespace RPGCharacterEditor.WIP_Character
     public class Character
     {
         public BaseStatsManager baseStatsManager;
+        public List<Item> inventory = new List<Item>();
 
-        public ItemList itemList;
-        
         public int hat_index   { get; set; }
         public int shirt_index { get;set;  }
         public int boots_index { get;set;  }
@@ -20,7 +19,8 @@ namespace RPGCharacterEditor.WIP_Character
         public Character()
         {
             baseStatsManager = new BaseStatsManager();
-            itemList = new ItemList();
         }
+
+
     }
 }

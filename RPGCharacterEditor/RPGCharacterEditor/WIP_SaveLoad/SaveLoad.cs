@@ -7,6 +7,7 @@ using RPGCharacterEditor.WIP_Character;
 using System.IO;
 using System.Xml;
 using System.Windows.Forms;
+using FinaleAssignment_CharacterEdit.WIP_Inventory;
 
 namespace FinaleAssignment_CharacterEdit.WIP_SaveLoad
 {
@@ -32,7 +33,7 @@ namespace FinaleAssignment_CharacterEdit.WIP_SaveLoad
             do
             {
                 var dialogResult = openFileDialog.ShowDialog();
-                if (openFileDialog.CheckPathExists)
+                if (openFileDialog.CheckPathExists && openFileDialog.FileName != string.Empty)
                 {
                     path = openFileDialog.FileName;
                     FileStream mFile = File.OpenRead(path);
@@ -53,7 +54,7 @@ namespace FinaleAssignment_CharacterEdit.WIP_SaveLoad
                 }
             } while (!openFileDialog.CheckPathExists);
 
-            return newCharacter;
+            return newCharacter = null;
         }
 
         public void Save(Character character, string path)
@@ -61,13 +62,12 @@ namespace FinaleAssignment_CharacterEdit.WIP_SaveLoad
             System.Xml.Serialization.XmlSerializer writer =
                  new System.Xml.Serialization.XmlSerializer(typeof(Character));
 
-            string fullPath = Directory.GetCurrentDirectory() + "\\"+ path;
+            string fullPath = Directory.GetCurrentDirectory() + "\\" + path;
 
             FileStream file = File.Create(fullPath);
-            writer.Serialize(file, character);
+                writer.Serialize(file, character);
 
             file.Close();
-
         }
     }
 }

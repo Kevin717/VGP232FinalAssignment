@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPGCharacterEditor"
         mc:Ignorable="d"
-        Title="RPG Character Editor" Height="621.483" Width="800.547" Closing="window_main_closing">
+        Title="RPG Character Editor" Height="621.483" Width="1002.547" Closing="window_main_closing">
     <Grid Margin="0,0,2,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="InventoryList" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="199" Margin="430,13,0,0" IsReadOnly="True"/>
-        <Button x:Name="btn_additem" Content="Add Item" HorizontalAlignment="Left" Margin="475,216,0,0" VerticalAlignment="Top" Width="97" Height="20" Click="btn_additem_click"/>
+        <DataGrid x:Name="InventoryList" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="534" Margin="430,13,0,0" IsReadOnly="True"/>
+        <Button x:Name="btn_additem" Content="Add Item" HorizontalAlignment="Left" Margin="656,218,0,0" VerticalAlignment="Top" Width="97" Height="20" Click="btn_additem_click"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,41,0,0" TextWrapping="Wrap" Text="Hat" VerticalAlignment="Top" Width="27"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,101,0,0" TextWrapping="Wrap" Text="Shirt" VerticalAlignment="Top" Width="27"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,161,0,0" TextWrapping="Wrap" Text="Boots" VerticalAlignment="Top" Width="34"/>
@@ -43,12 +43,12 @@
         <Label Content="=" HorizontalAlignment="Left" Margin="360,439,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="=" HorizontalAlignment="Left" Margin="360,484,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="=" HorizontalAlignment="Left" Margin="360,527,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <TextBox x:Name="FileNameBox" HorizontalAlignment="Left" Height="23" Margin="526,399,0,0" TextWrapping="Wrap" Text="File Name" VerticalAlignment="Top" Width="211"/>
-        <Button x:Name="LoadButtom" Content="Load" HorizontalAlignment="Left" Margin="526,435,0,0" VerticalAlignment="Top" Width="72" Height="19" Click="LoadButtom_Click"/>
-        <Button x:Name="SaveButtom" Content="Save" HorizontalAlignment="Left" Margin="665,435,0,0" VerticalAlignment="Top" Width="72" Height="19" Click="SaveButtom_Click"/>
-        <ComboBox x:Name="dropdown_equip_helm" HorizontalAlignment="Left" Margin="661,20,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding helmlist.mItemName}" SelectionChanged="dropdown_equip_helm_changed"/>
-        <ComboBox x:Name="dropdown_equip_chest" HorizontalAlignment="Left" Margin="661,95,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding chestlist.mItemName}" SelectionChanged="dropdown_equip_chest_changed"/>
-        <ComboBox x:Name="dropdown_equip_weapon" HorizontalAlignment="Left" Margin="661,179,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding weaponlist.mItemName}" SelectionChanged="dropdown_equip_weapon_changed"/>
+        <TextBox x:Name="FileNameBox" HorizontalAlignment="Left" Height="23" Margin="759,505,0,0" TextWrapping="Wrap" Text="File Name" VerticalAlignment="Top" Width="211"/>
+        <Button x:Name="LoadButtom" Content="Load" HorizontalAlignment="Left" Margin="759,541,0,0" VerticalAlignment="Top" Width="72" Height="19" Click="LoadButtom_Click"/>
+        <Button x:Name="SaveButtom" Content="Save" HorizontalAlignment="Left" Margin="898,541,0,0" VerticalAlignment="Top" Width="72" Height="19" Click="SaveButtom_Click"/>
+        <ComboBox x:Name="dropdown_equip_helm" HorizontalAlignment="Left" Margin="725,299,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding helmlist.mItemName}" SelectionChanged="dropdown_equip_helm_changed"/>
+        <ComboBox x:Name="dropdown_equip_chest" HorizontalAlignment="Left" Margin="725,372,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding chestlist.mItemName}" SelectionChanged="dropdown_equip_chest_changed"/>
+        <ComboBox x:Name="dropdown_equip_weapon" HorizontalAlignment="Left" Margin="725,446,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding weaponlist.mItemName}" SelectionChanged="dropdown_equip_weapon_changed"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="26,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Level" HorizontalAlignment="Left" Margin="26,266,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <!-- Kevin's Stuff - Do not touch -->
@@ -77,6 +77,10 @@
         <TextBox x:Name="text_totalSTR" HorizontalAlignment="Left" Height="23" Margin="387,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
         <TextBox x:Name="text_totalINT" HorizontalAlignment="Left" Height="23" Margin="387,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
         <TextBox x:Name="text_totalDEX" HorizontalAlignment="Left" Height="23" Margin="387,524,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" IsUndoEnabled="False"/>
+        <Label Content="Current Weapon
+               " HorizontalAlignment="Left" Margin="565,438,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="116"/>
+        <Label Content="Current ChestPiece" HorizontalAlignment="Left" Margin="565,360,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="120"/>
+        <Label Content="Current ChestPiece" HorizontalAlignment="Left" Margin="569,291,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="120"/>
         <!-- End of Kevin's Stuff -->
     </Grid>
 </Window>
