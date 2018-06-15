@@ -36,7 +36,7 @@ namespace RPGCharacterEditor
         private Serializer serializer;
         private SpriteEditor sprite_editor = new SpriteEditor();
         private EquippedItems equipped_items;
-        WindowAddItem window_additem = new WindowAddItem();
+        WindowAddItem window_additem;
 
         public Editor()
         {
@@ -54,7 +54,7 @@ namespace RPGCharacterEditor
             //pItems.Add(3);
             //pItems.Add(2);
 
-            window_additem.Load(ref window_main);
+            //window_additem.Load(ref window_main);
             InventoryList.ItemsSource = pItems.inventory;
             equipped_items = new EquippedItems(ref pItems, dropdown_equip_weapon, dropdown_equip_helm, dropdown_equip_chest);
             
@@ -67,7 +67,7 @@ namespace RPGCharacterEditor
 
             if (float.TryParse(HPBox.Text, out float result))
             {
-                if (result <= 0)
+                if (result < 0)
                 {
                     System.Windows.MessageBox.Show("Invalid Health");
                 }
@@ -80,7 +80,7 @@ namespace RPGCharacterEditor
             {
                 if (HPBox.Text == string.Empty)
                 {
-                    return;
+//                    return;
                 }
                 else
                 {
@@ -112,7 +112,7 @@ namespace RPGCharacterEditor
             {
                 if (LevelBox.Text == string.Empty)
                 {
-                    return;
+//                    return;
                 }
                 else
                 {
@@ -138,7 +138,7 @@ namespace RPGCharacterEditor
             {
                 if (MPBox.Text == string.Empty)
                 {
-                    return;
+ //                   return;
                 }
                 else
                 {
@@ -152,7 +152,7 @@ namespace RPGCharacterEditor
         {
             if (float.TryParse(DEFBox.Text, out float result))
             {
-                if (result <= 0)
+                if (result < 0)
                 {
                     System.Windows.MessageBox.Show("Invalid Defense");
                 }
@@ -165,7 +165,7 @@ namespace RPGCharacterEditor
             {
                 if (DEFBox.Text == string.Empty)
                 {
-                    return;
+//                    return;
                 }
                 else
                 {
@@ -179,7 +179,7 @@ namespace RPGCharacterEditor
         {
             if (float.TryParse(STRBox.Text, out float result))
             {
-                if (result <= 0)
+                if (result < 0)
                 {
                     System.Windows.MessageBox.Show("Invalid Strength");
                 }
@@ -193,7 +193,7 @@ namespace RPGCharacterEditor
             {
                 if (STRBox.Text == string.Empty)
                 {
-                    return;
+//                    return;
                 }
                 else
                 {
@@ -207,7 +207,7 @@ namespace RPGCharacterEditor
         {
             if (float.TryParse(INTELBox.Text, out float result))
             {
-                if (result <= 0)
+                if (result < 0)
                 {
                     System.Windows.MessageBox.Show("Invalid Intelligence");
                 }
@@ -220,7 +220,7 @@ namespace RPGCharacterEditor
             {
                 if (INTELBox.Text == string.Empty)
                 {
-                    return;
+//                    return;
                 }
                 else
                 {
@@ -234,7 +234,7 @@ namespace RPGCharacterEditor
         {
             if (float.TryParse(DEXBox.Text, out float result))
             {
-                if (result <= 0)
+                if (result < 0)
                 {
                     System.Windows.MessageBox.Show("Invalid Dexterity");
                 }
@@ -247,7 +247,7 @@ namespace RPGCharacterEditor
             {
                 if (DEXBox.Text == string.Empty)
                 {
-                    return;
+//                    return;
                 }
                 else
                 {
@@ -356,9 +356,12 @@ namespace RPGCharacterEditor
 
         private void btn_additem_click(object sender, RoutedEventArgs e)
         {
+            window_additem = new WindowAddItem();
+            window_additem.Load(ref window_main);
+            window_additem.Show();
             window_additem.listview_allitems.ItemsSource = myItemList.GetItems();
             
-            window_additem.Show();
+//            window_additem.Show();
         }
 
         public void Refresh_Inventory(Inventory mitems)
@@ -387,49 +390,120 @@ namespace RPGCharacterEditor
 
         private void dropdown_equip_helm_changed(object sender, SelectionChangedEventArgs e) //update bonus stats here
         {
-            if (equipped_items.helmlist[dropdown_equip_helm.SelectedIndex] != null)
+            try
             {
-                equipped_items.equippedHelm.mEquiped = false;
-                equipped_items.equippedHelm = equipped_items.helmlist[dropdown_equip_helm.SelectedIndex];
-                equipped_items.equippedHelm.mEquiped = true;
+                if (equipped_items.helmlist[dropdown_equip_helm.SelectedIndex] != null)
+                {
+                    equipped_items.equippedHelm.mEquiped = false;
+                    equipped_items.equippedHelm = equipped_items.helmlist[dropdown_equip_helm.SelectedIndex];
+                    equipped_items.equippedHelm.mEquiped = true;
+                    equipped_items.CalculateStats();
+                    InventoryList.Items.Refresh();
+                    UpdateText();
+                    equipped_items.helm_index = dropdown_equip_helm.SelectedIndex;
+                }
+            }
+            catch
+            {
+                equipped_items.equippedHelm = equipped_items.item_null;
                 equipped_items.CalculateStats();
                 InventoryList.Items.Refresh();
                 UpdateText();
-                equipped_items.helm_index = dropdown_equip_helm.SelectedIndex;
+                equipped_items.helm_index = 0;
+                dropdown_equip_helm.SelectedIndex = 0;
             }
         }
 
         private void dropdown_equip_chest_changed(object sender, SelectionChangedEventArgs e) //Chest
         {
-            if (equipped_items.chestlist[dropdown_equip_chest.SelectedIndex] != null)
+            try
             {
-                equipped_items.equippedChest.mEquiped = false;
-                equipped_items.equippedChest = equipped_items.chestlist[dropdown_equip_chest.SelectedIndex];
-                equipped_items.equippedChest.mEquiped = true;
+                if (equipped_items.chestlist[dropdown_equip_chest.SelectedIndex] != null)
+                {
+                    equipped_items.equippedChest.mEquiped = false;
+                    equipped_items.equippedChest = equipped_items.chestlist[dropdown_equip_chest.SelectedIndex];
+                    equipped_items.equippedChest.mEquiped = true;
+                    equipped_items.CalculateStats();
+                    InventoryList.Items.Refresh();
+                    UpdateText();
+                    equipped_items.chest_index = dropdown_equip_chest.SelectedIndex;
+                }
+            }
+            catch
+            {
+                equipped_items.equippedChest = equipped_items.item_null;
                 equipped_items.CalculateStats();
                 InventoryList.Items.Refresh();
                 UpdateText();
-                equipped_items.chest_index = dropdown_equip_chest.SelectedIndex;
+                equipped_items.chest_index = 0;
+                dropdown_equip_chest.SelectedIndex = 0;
             }
         }
 
         private void dropdown_equip_weapon_changed(object sender, SelectionChangedEventArgs e)
         {
-            if (equipped_items.weaponlist[dropdown_equip_weapon.SelectedIndex] != null)
+            try
             {
-                equipped_items.equippedWeapon.mEquiped = false;
-                equipped_items.equippedWeapon = equipped_items.weaponlist[dropdown_equip_weapon.SelectedIndex];
-                equipped_items.equippedWeapon.mEquiped = true;
+                if (equipped_items.weaponlist[dropdown_equip_weapon.SelectedIndex] != null)
+                {
+                    equipped_items.equippedWeapon.mEquiped = false;
+                    equipped_items.equippedWeapon = equipped_items.weaponlist[dropdown_equip_weapon.SelectedIndex];
+                    equipped_items.equippedWeapon.mEquiped = true;
+                    equipped_items.CalculateStats();
+                    InventoryList.Items.Refresh();
+                    UpdateText();
+                    equipped_items.weapon_index = dropdown_equip_weapon.SelectedIndex;
+                }
+            }
+            catch
+            {
+                equipped_items.equippedWeapon = equipped_items.item_null;
                 equipped_items.CalculateStats();
                 InventoryList.Items.Refresh();
                 UpdateText();
-                equipped_items.weapon_index = dropdown_equip_weapon.SelectedIndex;
+                equipped_items.weapon_index = 0;
+                dropdown_equip_weapon.SelectedIndex = 0;
             }
         }
 
         private void window_main_closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            window_additem.Close();
+            if (window_additem != null)
+            {
+                window_additem.Close();
+            }
+        }
+
+        private void btn_remove_item_click(object sender, RoutedEventArgs e)
+        {
+            if (pItems.inventory.Count() > 0)
+            {
+                int i;
+                i = InventoryList.SelectedIndex;
+                pItems.inventory.RemoveAt(i);
+                InventoryList.Items.Refresh();
+                equipped_items.Refresh();
+            }
+        }
+
+        private void btn_remove_item_x_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(text_remove_item_amount.Text, out int result))
+            {
+                if (result > 0)
+                {
+                    int i;
+                    i = InventoryList.SelectedIndex;
+                    pItems.inventory[i].mItemAmount -= result;
+                    if (pItems.inventory[i].mItemAmount <= 0)
+                    {
+                        pItems.inventory.RemoveAt(i);
+                    }
+                     InventoryList.Items.Refresh();
+                     equipped_items.Refresh();
+                }
+
+            }
         }
     }
 }

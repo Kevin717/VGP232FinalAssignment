@@ -10,8 +10,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="InventoryList" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="534" Margin="430,13,0,0" IsReadOnly="True"/>
-        <Button x:Name="btn_additem" Content="Add Item" HorizontalAlignment="Left" Margin="656,218,0,0" VerticalAlignment="Top" Width="97" Height="20" Click="btn_additem_click"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="419,13,0,0" VerticalAlignment="Top" Width="564"/>
+        <DataGrid x:Name="InventoryList" HorizontalAlignment="Left" Height="175" VerticalAlignment="Top" Width="444" Margin="430,26,0,0" IsReadOnly="True"/>
+        <Button x:Name="btn_additem" Content="Add Item" HorizontalAlignment="Left" Margin="880,38,0,0" VerticalAlignment="Top" Width="97" Height="20" Click="btn_additem_click"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,41,0,0" TextWrapping="Wrap" Text="Hat" VerticalAlignment="Top" Width="27"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,101,0,0" TextWrapping="Wrap" Text="Shirt" VerticalAlignment="Top" Width="27"/>
         <TextBlock HorizontalAlignment="Left" Margin="222,161,0,0" TextWrapping="Wrap" Text="Boots" VerticalAlignment="Top" Width="34"/>
@@ -80,7 +81,23 @@
         <Label Content="Current Weapon
                " HorizontalAlignment="Left" Margin="565,438,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="116"/>
         <Label Content="Current ChestPiece" HorizontalAlignment="Left" Margin="565,360,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="120"/>
-        <Label Content="Current ChestPiece" HorizontalAlignment="Left" Margin="569,291,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="120"/>
+        <Label Content="Current Helm" HorizontalAlignment="Left" Margin="569,291,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="120"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,13,0,0" VerticalAlignment="Top" Width="402">
+            <Label Content="Sprite Editor" Margin="-5,-21,329,185"/>
+        </Border>
+        <Label Content="Character" HorizontalAlignment="Left" Margin="6,202,0,0" VerticalAlignment="Top" Width="82"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="335" Margin="10,221,0,0" VerticalAlignment="Top" Width="509">
+            <Label Content="Equipment Bonus" Margin="231,64,173,242"/>
+        </Border>
+        <Label Content="Base Stats" HorizontalAlignment="Left" Margin="104,287,0,0" VerticalAlignment="Top"/>
+        <Label Content="Total Stats" HorizontalAlignment="Left" Margin="415,287,0,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="207" Margin="524,287,0,0" VerticalAlignment="Top" Width="459"/>
+        <Label Content="Equipments" HorizontalAlignment="Left" Margin="519,265,0,0" VerticalAlignment="Top"/>
+        <Label Content="Inventory" HorizontalAlignment="Left" Margin="414,-7,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="text_remove_item_amount" HorizontalAlignment="Left" Height="23" Margin="880,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97"/>
+        <Button x:Name="btn_remove_item_x" Content="Remove X..." HorizontalAlignment="Left" Margin="880,103,0,0" VerticalAlignment="Top" Width="97" Click="btn_remove_item_x_Click"/>
+        <Button x:Name="btn_remove_item" Content="Remove From Inv" HorizontalAlignment="Left" Margin="880,130,0,0" VerticalAlignment="Top" Width="97" Click="btn_remove_item_click"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="875,53,0,0" VerticalAlignment="Top"/>
         <!-- End of Kevin's Stuff -->
     </Grid>
 </Window>

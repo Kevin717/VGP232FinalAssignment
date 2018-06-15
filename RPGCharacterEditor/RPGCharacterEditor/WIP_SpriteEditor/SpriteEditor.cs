@@ -130,9 +130,9 @@ namespace FinaleAssignment_CharacterEdit.WIP_SpriteEdit
                     img_hat.Source = new BitmapImage(new Uri(hatlist[mCharacter.hat_index]));
                 }
             }
-            catch (Exception e)
+            catch
             {
-                System.Windows.Forms.MessageBox.Show(e + "\nThere is no elements initalized in hatlist[" + mCharacter.hat_index + "]");
+                System.Windows.Forms.MessageBox.Show("\nThere is no elements initalized in hatlist[" + mCharacter.hat_index + "], due to image not found.");
             }
             try
             {
@@ -141,9 +141,9 @@ namespace FinaleAssignment_CharacterEdit.WIP_SpriteEdit
                     img_shirt.Source = new BitmapImage(new Uri(shirtlist[mCharacter.shirt_index]));
                 }
             }
-            catch (Exception e)
+            catch
             {
-                System.Windows.Forms.MessageBox.Show(e + "\nThere is no elements initalized in shirtlist[" + mCharacter.shirt_index + "]");
+                System.Windows.Forms.MessageBox.Show("\nThere is no elements initalized in shirtlist[" + mCharacter.shirt_index + "], due to image not found.");
             }
             try
             {
@@ -152,9 +152,9 @@ namespace FinaleAssignment_CharacterEdit.WIP_SpriteEdit
                     img_boots.Source = new BitmapImage(new Uri(bootslist[mCharacter.boots_index]));
                 }
             }
-            catch (Exception e)
+            catch
             {
-                System.Windows.Forms.MessageBox.Show(e + "\nThere is no elements initalized in bootslist[" + mCharacter.boots_index + "]");
+                System.Windows.Forms.MessageBox.Show("\nThere is no elements initalized in bootslist[" + mCharacter.boots_index + "], due to image not found.");
             }
         }
 

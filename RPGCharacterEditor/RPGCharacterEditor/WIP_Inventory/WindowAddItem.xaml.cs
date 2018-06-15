@@ -45,7 +45,7 @@ namespace RPGCharacterEditor.WIP_Inventory
                     main_window.pItems.Add(listview_allitems.SelectedIndex, amount);
                     main_window.Refresh_Inventory(main_window.pItems);
 
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace RPGCharacterEditor.WIP_Inventory
             {
                 main_window.pItems.Add(listview_allitems.SelectedIndex);
                 main_window.Refresh_Inventory(main_window.pItems);
-                this.Hide();
+                this.Close();
             }        
         }
 
